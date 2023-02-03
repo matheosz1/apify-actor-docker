@@ -14,7 +14,7 @@ const testPageLoading = async (browser) => {
     }
 };
 
-const testPuppeteerChrome = async () => {
+const testFakebrowserChrome = async () => {
     console.log('Testing Fakebrowser with full Chrome');
     // We need --no-sandbox, because even though the build is running on GitHub, the test is running in Docker.
     // const launchOptions = { headless: false, args: ['--no-sandbox'] };
@@ -55,4 +55,4 @@ const testPuppeteerChrome = async () => {
     }
 };
 
-module.exports = testPuppeteerChrome;
+module.exports = testFakebrowserChrome;
