@@ -1,4 +1,3 @@
-const { launchPuppeteer } = require('crawlee');
 const {FakeBrowser} = require('fakebrowser');
 
 const path = require('path');
@@ -6,7 +5,7 @@ const path = require('path');
 const userDataDir = path.resolve(__dirname, './fakeBrowserUserData')
 
 const testPageLoading = async (browser) => {
-    const page = await fakeBrowser.vanillaBrowser.newPage();
+    const page = await browser.vanillaBrowser.newPage();
     await page.goto('http://www.example.com');
     const pageTitle = await page.title();
     if (pageTitle !== 'Example Domain') {
@@ -31,7 +30,6 @@ const testFakebrowserChrome = async () => {
         .vanillaLaunchOptions({
             headless: false,
             useChrome: true,
-            executablePath: '/usr/bin/google-chrome',
             // executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
             userDataDir,
             dumpio: false,
@@ -51,7 +49,7 @@ const testFakebrowserChrome = async () => {
     try {
         await testPageLoading(browser);
     } finally {
-        await browser.close();
+        await browser.shutdown();
     }
 };
 

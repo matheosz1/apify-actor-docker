@@ -4,3 +4,4 @@ node_modules
 yarn.lock
 .vscode
 .DS_Store
+node-puppeteer-chrome/fakeBrowserUserData

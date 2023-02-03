@@ -15,6 +15,7 @@ const { Actor } = require('apify');
 const { launchPuppeteer, getMemoryInfo } = require('crawlee');
 const testPuppeteerChrome = require('./puppeteer_chrome_test');
 const testFakebrowserChrome = require('./fakebrowser_chrome_test');
+
 Actor.main(async () => {
     // First, try to open Chromium to see all dependencies are correctly installed
     console.log('Testing Puppeteer with Chromium');
