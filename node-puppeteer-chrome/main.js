@@ -14,7 +14,7 @@ console.log('Testing Docker image...');
 const { Actor } = require('apify');
 const { launchPuppeteer, getMemoryInfo } = require('crawlee');
 const testPuppeteerChrome = require('./puppeteer_chrome_test');
-
+const testFakeBrowserChrome = require('./fakebrowser_chrome_test');
 Actor.main(async () => {
     // First, try to open Chromium to see all dependencies are correctly installed
     console.log('Testing Puppeteer with Chromium');
@@ -31,7 +31,10 @@ Actor.main(async () => {
 
     // Second, try to use full Chrome
     await testPuppeteerChrome();
-
+    
+    //Third, try to use full Chrome with Fakebrowser
+    await testFakeBrowserChrome();
+    
     // Test that "ps" command is available, sometimes it was missing in official Node builds
     await getMemoryInfo();
 
