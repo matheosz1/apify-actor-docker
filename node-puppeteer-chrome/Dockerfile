@@ -63,6 +63,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y /tmp/chrome.deb \
 # Add user so we don't need --no-sandbox.
 RUN groupadd -r myuser && useradd -r -g myuser -G audio,video myuser \
     && mkdir -p /home/myuser/Downloads \
+    && mkdir -p /home/pptruser/fakeBrowserUserData \
+    && mkdir -p /.local \
     && chown -R myuser:myuser /home/myuser
 
 RUN mkdir -p /etc/opt/chrome/policies/managed \
