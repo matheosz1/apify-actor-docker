@@ -7,9 +7,9 @@
         "start": "node main.js"
     },
     "dependencies": {
-        "apify": "APIFY_VERSION",
-        "crawlee": "CRAWLEE_VERSION",
-        "puppeteer": "PUPPETEER_VERSION",
+        "apify": "*",
+        "crawlee": "*",
+        "puppeteer": "14.3.0",
         "typescript": "^4.7.4"
     },
     "repository": {}

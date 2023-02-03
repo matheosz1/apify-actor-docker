@@ -12,7 +12,7 @@ const testPageLoading = async (browser) => {
 const testPuppeteerChrome = async () => {
     console.log('Testing Puppeteer with full Chrome');
     // We need --no-sandbox, because even though the build is running on GitHub, the test is running in Docker.
-    const launchOptions = { headless: true, args: ['--no-sandbox'] };
+    const launchOptions = { headless: false, args: ['--no-sandbox'] };
     const launchContext = { useChrome: true, launchOptions };
 
     const browser = await launchPuppeteer(launchContext);
